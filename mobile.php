@@ -10,12 +10,11 @@
     class mobile
     {
         public $brand;
-       
         public $model;
         public $price;
         static $accessories=array("Charger","Ear-phones");
 
-        public function __construct($brand,$price,$model)
+        public function __construct($brand,$model,$price)
         {
             $this->brand="<h2>Brand $brand</h2>";
          
@@ -29,7 +28,6 @@
         function printDetails()
         {
             echo $this->brand."<br>";
-         
             echo $this->model."<br>";
             echo $this->price."<br>";
            
@@ -39,22 +37,22 @@
                 
             }
         }
-            public  function showDicountedprice($amount)
+            function showDicountedprice($amount)
 
             {
                 $amount=($amount/100)*$this->price;
-               echo "price after discount: ",($this->price)-$amount,"<br>";
+                echo "Total Price after discount: ",($this->price)-$amount,"<br>";
                 
             }
            
 
             
         }
-        $mobile1=new mobile("Samsung",20000,"M31s");
+        $mobile1=new mobile("Samsung","M31s",20000);
         $mobile1->printDetails();
         $mobile1->showDicountedprice(30);
         
-        $mobile2=new mobile("MI",15000,"Note 9");
+        $mobile2=new mobile("MI","Note 9",15000);
         $mobile2->printDetails();
         $mobile2->showDicountedprice(20);
     
